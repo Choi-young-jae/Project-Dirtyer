@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7A2F74F8-3243-62EA-C2C2-B0F10D8DC278}</ProjectGuid>
+    <ProjectGuid>{3D001929-C730-C64A-87F1-879B04725663}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -45,11 +45,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\ChangeScene.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\DisableButton.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\InstantiateThings.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\MoveButton.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\Rotate.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\RotateCar.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\RotateLight.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Demo\DemoScripts\SwapCarTexture.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarAudio.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarController.cs" />
+     <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarUserControl.cs" />
      <Compile Include="Assets\Scripts\ColisionScript.cs" />
      <Compile Include="Assets\Scripts\ColisionScript_ani.cs" />
+     <Compile Include="Assets\Scripts\GetpointScript.cs" />
      <Compile Include="Assets\Scripts\MoveBehaviour.cs" />
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\MoveSpoint.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
@@ -64,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{DD34B5CB-0B84-5D17-87C8-19A5B30A6CB4}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{418618F7-57F7-BD7D-7CE0-616672B922FB}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
