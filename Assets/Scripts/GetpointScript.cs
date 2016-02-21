@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;					
 
 public class GetpointScript : MonoBehaviour {
 
     static public int score;
+    static public Text scoretext;
     public Transform textprefap;
 	// Update is called once per frame
     void Start()
     {
         score = 0;
+        scoretext = GameObject.Find("scoreText").GetComponent<Text>();
+        scoretext.text = "Score : " + score;
     }
 	void OnTriggerEnter(Collider coll)
     {
@@ -46,6 +50,9 @@ public class GetpointScript : MonoBehaviour {
         //obj.GetComponent<Transform>().rotation = new Vector3(0, 0, 0);
         obj.GetComponent<TextMesh>().text = "+" + point;
         Debug.Log(GetpointScript.score);
+
+        scoretext.text = "Score : " + score;
+
     }
 	
 }
