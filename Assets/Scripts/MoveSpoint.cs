@@ -23,16 +23,21 @@ public class MoveSpoint : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float amtRot = rotspeed * Time.smoothDeltaTime; //부드러운 회전을 위해
+        Vector3 ang = mainshoot.transform.eulerAngles;
 
         float keyRot = Input.GetAxis("Vertical");
+        float keyLR = Input.GetAxis("Horizontal");
 
         mainshoot.transform.Rotate(Vector3.right * keyRot * 4);
+        this.transform.Rotate(Vector3.up * keyLR * 4);
 
+        if (mainshoot.transform.eulerAngles.x > 45 &&  mainshoot.transform.eulerAngles.x<330)
+            mainshoot.transform.eulerAngles = ang;
         //회전각의 제한을 줌
-        Vector3 ang = mainshoot.transform.eulerAngles;
-        if (ang.x > 180) ang.x -= 360;
+        
+        /*if (ang.x > 180) ang.x -= 360;
         ang.x = Mathf.Clamp(ang.x, -80, 80);
-        mainshoot.transform.eulerAngles = ang;
+        mainshoot.transform.eulerAngles = ang;*/
         if (Input.GetButtonDown("Fire1"))
         {
             keypressed = true;

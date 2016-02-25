@@ -15,6 +15,9 @@ public class ColisionScript : MonoBehaviour {
     }
     void OnTriggerEnter(Collider coll)
     {
+        if (coll.transform.tag == "Border" || coll.transform.tag == "Small_Object"
+            || coll.transform.tag =="Untagged") return;
+
         if (coll.transform.tag == "Bullet")
         {
             this.GetComponent<BoxCollider>().isTrigger = false;
@@ -29,9 +32,9 @@ public class ColisionScript : MonoBehaviour {
             return;
         }
 
-        if (coll.transform.tag == "Border" || coll.transform.tag == "Small_Object") return;
+        
 
-        Debug.Log(coll.transform.tag + " / " +  coll.GetComponent<BoxCollider>().isTrigger);
+        //Debug.Log(coll.transform.tag + " / " +  coll.GetComponent<BoxCollider>().isTrigger);
 
 
         if ((coll.GetComponent<BoxCollider>().isTrigger == false && coll.transform.tag=="Big_Object")

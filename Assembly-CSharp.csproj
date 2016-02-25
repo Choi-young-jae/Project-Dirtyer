@@ -56,6 +56,7 @@
      <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarAudio.cs" />
      <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarController.cs" />
      <Compile Include="Assets\PBR Mini_Truck\Standard Assets\Scripts\CarUserControl.cs" />
+     <Compile Include="Assets\Scripts\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\ColisionScript.cs" />
      <Compile Include="Assets\Scripts\ColisionScript_ani.cs" />
      <Compile Include="Assets\Scripts\GetpointScript.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\MoveSpoint.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\StageSelscript.cs" />
      <None Include="Assets\Wood texture floor_01\readme.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
