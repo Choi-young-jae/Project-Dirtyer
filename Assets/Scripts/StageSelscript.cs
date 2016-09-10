@@ -41,16 +41,16 @@ public class StageSelscript : MonoBehaviour {
         switch(curapge)
         {
             case 0:
-                storytext.text = "안녕하세요";
+                storytext.text = "언제나 처럼 공부를 하러 도서관에 온 김군";
                 break;
             case 1:
-                storytext.text = "게임이에요";
+                storytext.text = "그러나 그곳엔 양아치 무리들이 떠들고 있었다";
                 break;
             case 2:
-                storytext.text = "글자에요";
+                storytext.text = "\" 도저히 이런 상황에선 공부할수 없어! \" ";
                 break;
             case 3:
-                storytext.text = "잘가요";
+                storytext.text = "도서관의 평화를 찾기위한 김군의 사투가 시작된다";
                 break;
             default:
                 break;

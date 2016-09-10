@@ -27,17 +27,11 @@ public class ColisionScript : MonoBehaviour {
 
             coll.GetComponent<CapsuleCollider>().isTrigger = false;
             this.transform.tag = "Object";
-
+            coll.transform.tag = "Untagged";
             GetpointScript.addscore(this.GetComponent<Transform>().position, 200, textprefap);
             return;
         }
-
-        
-
-        //Debug.Log(coll.transform.tag + " / " +  coll.GetComponent<BoxCollider>().isTrigger);
-
-
-        if ((coll.GetComponent<BoxCollider>().isTrigger == false && coll.transform.tag=="Big_Object")
+        else if ((coll.GetComponent<BoxCollider>().isTrigger == false && coll.transform.tag == "Big_Object")
             || coll.transform.tag == "Object")
         {
             coll.GetComponent<BoxCollider>().isTrigger = true;
@@ -45,5 +39,11 @@ public class ColisionScript : MonoBehaviour {
             this.GetComponent<BoxCollider>().isTrigger = false;
             this.transform.tag = "Object";
         }
+
+
+        //Debug.Log(coll.transform.tag + " / " +  coll.GetComponent<BoxCollider>().isTrigger);
+
+
+
     }
 }

@@ -10,11 +10,14 @@ public class MoveSpoint : MonoBehaviour {
     private int power = 0;
     private bool keypressed = false;
     private Text powertext;
-
+    private bool increasepower = true;
     int rotspeed = 120; //회전 속도
+
+    private bool isgamerun;
 
     void Start()
     {
+        isgamerun = true;
         spPoint = GameObject.Find("Spanpoint").transform;
         powertext = GameObject.Find("powerText").GetComponent<Text>();
         powertext.text = "Power : " + power;
@@ -24,6 +27,7 @@ public class MoveSpoint : MonoBehaviour {
 	void Update () {
         float amtRot = rotspeed * Time.smoothDeltaTime; //부드러운 회전을 위해
         Vector3 ang = mainshoot.transform.eulerAngles;
+        Vector3 currentrot = this.transform.eulerAngles;
 
         float keyRot = Input.GetAxis("Vertical");
         float keyLR = Input.GetAxis("Horizontal");
@@ -31,29 +35,40 @@ public class MoveSpoint : MonoBehaviour {
         mainshoot.transform.Rotate(Vector3.right * keyRot * 4);
         this.transform.Rotate(Vector3.up * keyLR * 4);
 
-        if (mainshoot.transform.eulerAngles.x > 45 &&  mainshoot.transform.eulerAngles.x<330)
-            mainshoot.transform.eulerAngles = ang;
         //회전각의 제한을 줌
-        
-        /*if (ang.x > 180) ang.x -= 360;
-        ang.x = Mathf.Clamp(ang.x, -80, 80);
-        mainshoot.transform.eulerAngles = ang;*/
-        if (Input.GetButtonDown("Fire1"))
+        if (mainshoot.transform.eulerAngles.x > 45 && mainshoot.transform.eulerAngles.x < 330)
+            mainshoot.transform.eulerAngles = ang;
+        if (this.transform.eulerAngles.y > 35 && this.transform.eulerAngles.y < 325)
+            this.transform.eulerAngles = currentrot;
+
+        if(isgamerun)
         {
-            keypressed = true;
-            //StartCoroutine(addPower());
+            if (Input.GetButtonDown("Fire1"))
+            {
+                keypressed = true;
+                increasepower = true;
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                keypressed = false;
+                FireBullet();
+                isgamerun = false;
+            }
+            if (keypressed)
+            {
+                if (power > 1000) increasepower = false;
+                if (power < 0) increasepower = true;
+
+                if (increasepower)
+                    power += 50;
+                else
+                    power -= 50;
+
+                powertext.text = "Power : " + power;
+            }
         }
-        if(Input.GetButtonUp("Fire1"))
-        {
-            keypressed = false;
-            FireBullet();
-        }
-        if(keypressed)
-        {
-            power += 50;
-            powertext.text = "Power : " + power;
-        }
-	}
+    }
+
 
     void FireBullet()
     {

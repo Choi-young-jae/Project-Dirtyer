@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;					
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;				
 
 public class GetpointScript : MonoBehaviour {
 
     static public int score;
     static public Text scoretext;
     public Transform textprefap;
+    public bool increasescore = true;
+    public GameObject endui;
 	// Update is called once per frame
     void Start()
     {
@@ -39,6 +42,12 @@ public class GetpointScript : MonoBehaviour {
                 break;
         }
 
+        if(increasescore)
+        {
+            increasescore = false;
+            StartCoroutine(checkscore());
+        }
+
     }
     static public void addscore(Vector3 pos, int point,Transform textprefap)
     {
@@ -54,5 +63,25 @@ public class GetpointScript : MonoBehaviour {
         scoretext.text = "Score : " + score;
 
     }
-	
+	IEnumerator checkscore()
+    {
+        int currentscore;
+        while (true)
+        {
+            currentscore = score;
+            yield return new WaitForSeconds(3.0f);
+
+            if (currentscore != 0 && currentscore == score)
+            {
+                endui.SetActive(true);
+                this.GetComponent<BoxCollider>().enabled = false;
+            }
+
+        }
+    }
+
+    public void backtostatesel()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
