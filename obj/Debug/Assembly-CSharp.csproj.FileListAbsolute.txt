@@ -19,3 +19,5 @@ C:\Users\user\Downloads\대학\유니티\source\UnityProject\Chapter7-1\Lines\Te
 C:\Users\user\Downloads\대학\유니티\source\UnityProject\Chapter7-1\Lines\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\user\Downloads\대학\유니티\source\UnityProject\Chapter7-1\Lines\obj\Debug\Assembly-CSharp.dll
 C:\Users\user\Downloads\대학\유니티\source\UnityProject\Chapter7-1\Lines\obj\Debug\Assembly-CSharp.pdb
+D:\github\Project-Dirtyer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\github\Project-Dirtyer\obj\Debug\Assembly-CSharp.dll

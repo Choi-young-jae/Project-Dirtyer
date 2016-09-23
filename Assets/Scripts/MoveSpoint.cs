@@ -41,19 +41,26 @@ public class MoveSpoint : MonoBehaviour {
         if (this.transform.eulerAngles.y > 35 && this.transform.eulerAngles.y < 325)
             this.transform.eulerAngles = currentrot;
 
+        if (!isgamerun)
+            return;
+
         if(isgamerun)
         {
+            //마우스를 클릭하면 발사 모드로 변경해준다.
             if (Input.GetButtonDown("Fire1"))
             {
                 keypressed = true;
                 increasepower = true;
             }
+            //마우스를 떼면 투사체를 발사해준다.
             if (Input.GetButtonUp("Fire1"))
             {
                 keypressed = false;
                 FireBullet();
                 isgamerun = false;
             }
+            //만약 키를 계속 누르고 있는 상태라면 현재 파워에 따라서
+            //파워를 늘릴지 줄일지 결정한다.
             if (keypressed)
             {
                 if (power > 1000) increasepower = false;
@@ -76,6 +83,7 @@ public class MoveSpoint : MonoBehaviour {
         Transform obj = Instantiate(bullet, spPoint.position, spPoint.rotation) as Transform;
         obj.GetComponent<Rigidbody>().AddForce(spPoint.forward * power);
         power = 0;
+        StartCoroutine(GetpointScript.getpointscript.checkscore());
     }
     IEnumerator addPower()
     {
